@@ -30,17 +30,17 @@ local branch="$1"
 
 
 # RedOS Codename
-if [ -n "${REDOS_CODENAME}"]; then
+if [ -n "${ASTRA_CODENAME}"]; then
     echo "Found latest version of wine-${WINE_BRANCH} is available on RedOS ${REDOS_CODENAME}"
 else
-    echo "WARNING: Unable to determine version of RedOS to use with Wine, so using latest"
-    REDOS_CODENAME="latest"
+    echo "WARNING: Unable to determine version to use with Wine, so using latest"
+    ASTRA_CODENAME="latest"
 fi
 }
 
 get_os_codename () {
     local branch="$1"
-    local url="https://dl.winehq.org/wine-builds/ubuntu/dists/"
+    local url="https://dl.winehq.org/wine-builds/debian/dists/"
 
     # Get the latest two Ubuntu version codenames that Wine is available on
     local os_codenames=()
